@@ -31,7 +31,7 @@ public abstract class TypeDeclaration extends Declaration
     private boolean inconsistentType;
     private boolean dynamic;
 	private boolean sealed;
-    private List<TypedDeclaration> caseValues;
+    private List<Declaration> caseValues;
 
 	/** 
 	 * true if the type arguments of this type are not 
@@ -1043,11 +1043,11 @@ public abstract class TypeDeclaration extends Declaration
         return false;
     }
     
-    public List<TypedDeclaration> getCaseValues() {
+    public List<Declaration> getCaseValues() {
         return caseValues;
     }
 
-    public void setCaseValues(List<TypedDeclaration> caseValues) {
+    public void setCaseValues(List<Declaration> caseValues) {
         this.caseValues = caseValues;
     }
 

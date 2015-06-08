@@ -21,10 +21,19 @@ public class Class extends ClassOrInterface implements Functional {
     private boolean named = true;
     private boolean fin;
     private boolean serializable;
+    private boolean object;
     private List<Declaration> overloads;
     private List<Reference> unimplementedFormals = 
             Collections.<Reference>emptyList();
-
+    
+    public boolean isObjectClass() {
+        return object;
+    }
+    
+    public void setObjectClass(boolean object) {
+        this.object = object;
+    }
+    
     public boolean hasConstructors() {
         return constructors;
     }

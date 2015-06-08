@@ -24,6 +24,15 @@ public class Constructor extends TypeDeclaration implements Functional {
     private List<Declaration> members = new ArrayList<Declaration>(3);
     private List<Annotation> annotations = new ArrayList<Annotation>(4);
     private boolean anonymous;
+    private boolean value;
+    
+    public boolean isValueConstructor() {
+        return value;
+    }
+    
+    public void setValueConstructor(boolean value) {
+        this.value = value;
+    }
     
     @Override
     public boolean isAbstract() {

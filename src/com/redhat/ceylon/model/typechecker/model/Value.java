@@ -17,9 +17,12 @@ public class Value extends FunctionOrValue implements Scope {
     private boolean inferred;
     private boolean overloaded;
     private boolean abstraction;
+    private boolean anonymous;
 
     private Setter setter;
-    // used for object declarations that use their own value binding in their body
+    
+    // used for object declarations that use their own 
+    // value binding in their body
     private boolean selfCaptured;
 
     public Setter getSetter() {
@@ -118,6 +121,15 @@ public class Value extends FunctionOrValue implements Scope {
             return "value " + toStringName() + 
                     " => " + type.asString();
         }
+    }
+    
+    @Override
+    public boolean isAnonymous() {
+        return anonymous;
+    }
+
+    public void setAnonymous(boolean anonymous) {
+        this.anonymous = anonymous;
     }
 
 }
