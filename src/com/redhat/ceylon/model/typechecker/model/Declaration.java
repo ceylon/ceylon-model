@@ -402,6 +402,9 @@ public abstract class Declaration
         
         if (object instanceof Declaration) {
             Declaration that = (Declaration) object;
+            if (hashCode!=that.hashCode) {
+                return false;
+            }
             String thisName = getName();
             String thatName = that.getName();
             if (!Objects.equals(getQualifier(), that.getQualifier())) {
@@ -497,22 +500,34 @@ public abstract class Declaration
             return false;
         }
     }
+    
+    private int hashCode;
 
     @Override
     public int hashCode() {
-        int ret = 17;
-        Scope container = getContainer();
-        ret = (37 * ret) + 
-                (container == null ? 0 : container.hashCode());
-        String qualifier = getQualifier();
-        ret = (37 * ret) + 
-                (qualifier == null ? 0 : qualifier.hashCode());
-        String name = getName();
-        ret = (37 * ret) + (name == null ? 0 : name.hashCode());
-        // make sure we don't consider getter/setter or value/anonymous-type equal
-        ret = (37 * ret) + (isSetter() ? 0 : 1);
-        ret = (37 * ret) + (isAnonymous() ? 0 : 1);
-        return ret;
+        if (hashCode==0) {
+            hashCode = 17;
+            Scope container = getContainer();
+            hashCode = (37 * hashCode) + 
+                    (container == null ? 0 : 
+                        container.hashCode());
+            String qualifier = getQualifier();
+            hashCode = (37 * hashCode) + 
+                    (qualifier == null ? 0 : 
+                        qualifier.hashCode());
+            String name = getName();
+            hashCode = (37 * hashCode) + 
+                    (name == null ? 0 : 
+                        name.hashCode());
+            // make sure we don't consider getter/setter 
+            // or value/anonymous-type equal
+            hashCode = (37 * hashCode) + 
+                    (isSetter() ? 0 : 1);
+            hashCode = (37 * hashCode) + 
+                    (isAnonymous() ? 0 : 
+                        1);
+        }
+        return hashCode;
     }
     
     /**
