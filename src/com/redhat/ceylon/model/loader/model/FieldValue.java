@@ -22,6 +22,6 @@ public class FieldValue extends Value {
     
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Value.class; 
     }
 }

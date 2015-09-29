@@ -45,7 +45,7 @@ public class LazyClass extends Class implements LazyContainer {
 
     @Override
     protected java.lang.Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Class.class; 
     }
     
     public LazyClass(ClassMirror classMirror, ModelCompleter completer, Class superClass, MethodMirror constructor) {

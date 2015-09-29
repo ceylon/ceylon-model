@@ -43,7 +43,7 @@ public class LazyFunction extends Function implements LazyElement, LocalDeclarat
     
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Function.class; 
     }
     
     public LazyFunction(ClassMirror classMirror, ModelCompleter completer) {

@@ -25,7 +25,7 @@ public class JavaBeanValue extends Value implements LocalDeclarationContainer {
 
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Value.class; 
     }
 
     public void setGetterName(String getterName) {

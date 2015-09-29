@@ -37,7 +37,7 @@ public class LazyTypeAlias extends TypeAlias implements LazyContainer {
 
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return TypeAlias.class; 
     }
     
     public LazyTypeAlias(ClassMirror classMirror, ModelCompleter completer) {

@@ -41,7 +41,7 @@ public class LazyInterface extends Interface implements LazyContainer {
 
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Interface.class; 
     }
     
     public LazyInterface(ClassMirror classMirror, ModelCompleter completer) {

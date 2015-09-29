@@ -38,7 +38,7 @@ public class LazyValue extends Value implements LazyElement, LocalDeclarationCon
 
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Value.class; 
     }
     
     public LazyValue(ClassMirror classMirror, ModelCompleter completer) {

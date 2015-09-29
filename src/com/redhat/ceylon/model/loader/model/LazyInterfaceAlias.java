@@ -31,7 +31,7 @@ public class LazyInterfaceAlias extends InterfaceAlias implements LazyContainer 
 
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return InterfaceAlias.class;
     }
     
     public LazyInterfaceAlias(ClassMirror classMirror, ModelCompleter completer) {

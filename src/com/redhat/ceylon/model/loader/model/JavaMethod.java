@@ -21,7 +21,7 @@ public class JavaMethod extends Function implements LocalDeclarationContainer {
     
     @Override
     protected Class<?> getModelClass() {
-        return getClass().getSuperclass(); 
+        return Function.class;
     }
     
     public JavaMethod(MethodMirror mirror){
