@@ -402,7 +402,7 @@ public abstract class Declaration
         
         if (object instanceof Declaration) {
             Declaration that = (Declaration) object;
-            if (hashCode!=that.hashCode) {
+            if (hashCode()!=that.hashCode()) {
                 return false;
             }
             String thisName = getName();
