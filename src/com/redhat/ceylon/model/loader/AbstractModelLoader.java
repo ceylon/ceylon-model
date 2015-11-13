@@ -1968,6 +1968,10 @@ public abstract class AbstractModelLoader implements ModelCompleter, ModelLoader
             logWarning("Module class "+moduleClassName+" contains no version, ignoring it");
             return false;
         }
+        if(!version.equals(module.getVersion())){
+            logWarning("Module class "+moduleClassName+" declares an invalid version: "+version+". It should be: "+module.getVersion());
+            return false;
+        }
         int major = getAnnotationIntegerValue(moduleClass, CEYLON_CEYLON_ANNOTATION, "major", 0);
         int minor = getAnnotationIntegerValue(moduleClass, CEYLON_CEYLON_ANNOTATION, "minor", 0);
         module.setMajor(major);
